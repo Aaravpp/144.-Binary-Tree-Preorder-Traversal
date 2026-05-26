@@ -30,3 +30,40 @@ Space complexity: O(n)
 In worst case (skewed tree), recursion stack takes O(n)
 Output array also takes O(n)
 
+
+=================================================================================
+Iterative appraoch:
+
+Intuition:
+
+Preorder traversal visits nodes in the order:
+
+Root
+Left Subtree
+Right Subtree
+
+To achieve this iteratively, we use a stack.
+Since a stack follows LIFO (Last In First Out), we push the right child first and then the left child so the left node gets processed before the right node.
+
+Approach:
+
+If the root is None, return an empty list.
+Initialize:
+ans to store traversal result.
+stack with the root node.
+While the stack is not empty:
+Pop the top node.
+Add its value to ans.
+Push the right child into the stack if it exists.
+Push the left child into the stack if it exists.
+Return the preorder traversal list.
+
+Complexity:
+
+Time complexity:
+O(n)
+Each node is visited exactly once.
+
+Space complexity:
+O(n)
+In the worst case, the stack stores all nodes
